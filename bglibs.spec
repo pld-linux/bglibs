@@ -1,13 +1,12 @@
 Summary:	Bruce Guenter's Libraries Collection
 Summary(pl):	Zestaw bibliotek Bruce'a Guentera
 Name:		bglibs
-Version:	1.010
+Version:	1.011
 Release:	1
 License:	GPL
 Group:		Development/Libraries
 Source0:	http://untroubled.org/bglibs/%{name}-%{version}.tar.gz
-# Source0-md5:	2502cb6ee9099cda13e282fe17eb7584
-Patch0:		%{name}-pipe.patch
+# Source0-md5:	a5272bc7e30c5323e35b4361206309ea
 URL:		http://untroubled.org/bglibs/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -22,7 +21,6 @@ Zestaw bibliotek Bruce'a Guentera.
 
 %prep
 %setup -q
-%patch -p1
 
 %build
 echo '%{__cc} %{rpmcflags} -Wall' > conf-cc
