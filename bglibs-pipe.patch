@@ -1,0 +1,24 @@
+--- bglibs-1.010/unix/selfpipe.c.orig	2003-11-17 21:16:37.000000000 +0100
++++ bglibs-1.010/unix/selfpipe.c	2003-11-18 19:55:42.436533008 +0100
+@@ -69,9 +69,10 @@
+ {
+   int buf;
+   int fd = selfpipe_init();
++/* let it be kernel business which descriptors pipe returns (it failed on 2.6)
+   puti("FD[0]", fds[0]);
+   puti("FD[1]", fds[1]);
+-  puti("Returned FD", fd);
++  puti("Returned FD", fd); */
+   puti("read before SIGCHLD", read(fd, &buf, sizeof buf));
+   puti("errno is EAGAIN", errno == EAGAIN);
+   kill(0, SIGCHLD);
+@@ -87,9 +88,6 @@
+ }
+ #endif
+ #ifdef SELFTEST_EXP
+-FD[0]: 3
+-FD[1]: 4
+-Returned FD: 3
+ read before SIGCHLD: -1
+ errno is EAGAIN: 1
+ read after SIGCHLD: 1
