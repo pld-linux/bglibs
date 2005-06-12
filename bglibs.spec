@@ -1,17 +1,17 @@
 Summary:	Bruce Guenter's Libraries Collection
 Summary(pl):	Zestaw bibliotek Bruce'a Guentera
 Name:		bglibs
-Version:	1.019
+Version:	1.022
 Release:	1
 License:	GPL
 Group:		Development/Libraries
 Source0:	http://untroubled.org/bglibs/%{name}-%{version}.tar.gz
-# Source0-md5:	1e9e1d716d4527d08ea1dbf076a30c30
+# Source0-md5:	a6f7ad4d340aa56b375f0205976aad2d
 URL:		http://untroubled.org/bglibs/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # it cannot be installed in /usr/{include,lib} because of filename collisions
-%define		_prefix		/usr/lib/bglibs
+%define		_prefix		/usr/%{_lib}/bglibs
 
 %description
 Bruce Guenter's Libraries Collection.
@@ -29,15 +29,14 @@ echo '%{__cc} %{rpmldflags}' > conf-ld
 
 %{__make}
 
-rm -f conf_home.c insthier.o installer
-echo "$RPM_BUILD_ROOT%{_prefix}" > conf-home
-%{__make} installer
-
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_prefix}
 
-./installer
+echo "$RPM_BUILD_ROOT%{_bindir}" > conf-bin
+echo "$RPM_BUILD_ROOT%{_prefix}/include" > conf-include
+echo "$RPM_BUILD_ROOT%{_prefix}/lib" > conf-lib
+
+%{__make} install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
