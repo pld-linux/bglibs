@@ -1,12 +1,17 @@
+# comment
+# - what about files (not included in %files in previous version):
+#   /usr/lib/bglibs/bin/bg-installer
+#   /usr/lib/bglibs/bin/crc-gentab
+
 Summary:	Bruce Guenter's Libraries Collection
 Summary(pl):	Zestaw bibliotek Bruce'a Guentera
 Name:		bglibs
-Version:	1.022
+Version:	1.024
 Release:	1
 License:	GPL
 Group:		Development/Libraries
 Source0:	http://untroubled.org/bglibs/%{name}-%{version}.tar.gz
-# Source0-md5:	a6f7ad4d340aa56b375f0205976aad2d
+# Source0-md5:	34b04bc84538bf39fef53910b025188e
 URL:		http://untroubled.org/bglibs/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
