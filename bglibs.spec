@@ -1,8 +1,3 @@
-# comment
-# - what about files (not included in %files in previous version):
-#   /usr/lib/bglibs/bin/bg-installer
-#   /usr/lib/bglibs/bin/crc-gentab
-
 Summary:	Bruce Guenter's Libraries Collection
 Summary(pl):	Zestaw bibliotek Bruce'a Guentera
 Name:		bglibs
@@ -17,6 +12,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # it cannot be installed in /usr/{include,lib} because of filename collisions
 %define		_prefix		/usr/%{_lib}/bglibs
+%define		_bindir		/usr/bin
 
 %description
 Bruce Guenter's Libraries Collection.
@@ -49,6 +45,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog NEWS README TODO
+%attr(755,root,root) %{_bindir}/*
 %dir %{_prefix}
 %{_prefix}/include
 %{_prefix}/lib
