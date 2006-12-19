@@ -4,7 +4,7 @@ Name:		bglibs
 Version:	1.102
 Release:	1
 License:	GPL
-Group:		Development/Libraries
+Group:		Libraries
 Source0:	http://untroubled.org/bglibs/%{name}-%{version}.tar.gz
 # Source0-md5:	0615125e33abe30ecd50e63bcd43aa72
 URL:		http://untroubled.org/bglibs/
@@ -28,6 +28,18 @@ Header files for bglibs.
 
 %description devel -l pl
 Pliki nag³ówkowe dla bglibs.
+
+%package static
+Summary:	Static version of bglibs
+Summary(pl):	Statyczne wersje bglibs
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description static
+Static version of bglibs with shared equivalents.
+
+%description static -l pl
+Statyczne wersje bglibs maj±cych odpowiedniki wspó³dzielone.
 
 %prep
 %setup -q
@@ -60,10 +72,73 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog NEWS README TODO
-%attr(755,root,root) %{_bindir}/*
-%{_libdir}/%{name}
-%{_mandir}/*/*
+%dir %{_libdir}/%{name}
+%attr(755,root,root) %{_libdir}/%{name}/libbg.so.*
+%attr(755,root,root) %{_libdir}/%{name}/libbg-sysdeps.so.*
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/bg-installer
+%attr(755,root,root) %{_bindir}/cli-generate
+%attr(755,root,root) %{_bindir}/crc-gentab
+%attr(755,root,root) %{_libdir}/%{name}/libbg.so
+%attr(755,root,root) %{_libdir}/%{name}/libbg-sysdeps.so
+%{_libdir}/%{name}/libbg.la
+%{_libdir}/%{name}/libbg-sysdeps.la
+# static-only
+%{_libdir}/%{name}/libbg-adt.a
+%{_libdir}/%{name}/libbg-base64.a
+%{_libdir}/%{name}/libbg-cdb.a
+%{_libdir}/%{name}/libbg-cli.a
+%{_libdir}/%{name}/libbg-crc.a
+%{_libdir}/%{name}/libbg-crypto.a
+%{_libdir}/%{name}/libbg-dict.a
+%{_libdir}/%{name}/libbg-fmt.a
+%{_libdir}/%{name}/libbg-installer.a
+%{_libdir}/%{name}/libbg-instcheck.a
+%{_libdir}/%{name}/libbg-instshow.a
+%{_libdir}/%{name}/libbg-iobuf.a
+%{_libdir}/%{name}/libbg-misc.a
+%{_libdir}/%{name}/libbg-msg.a
+%{_libdir}/%{name}/libbg-net.a
+%{_libdir}/%{name}/libbg-path.a
+%{_libdir}/%{name}/libbg-str.a
+%{_libdir}/%{name}/libbg-unix.a
+%{_libdir}/%{name}/libpwcmp-module.a
+%{_libdir}/%{name}/libpwcmp.a
+%{_libdir}/%{name}/libvmailmgr.a
+# symlinks
+%{_libdir}/%{name}/libinstaller.a
+%{_libdir}/%{name}/libinstcheck.a
+%{_libdir}/%{name}/libinstshow.a
+# dirs with symlinks to libbg-*.a
+%{_libdir}/%{name}/base64
+%{_libdir}/%{name}/cdb
+%{_libdir}/%{name}/cli
+%{_libdir}/%{name}/crypto
+%{_libdir}/%{name}/dict
+%{_libdir}/%{name}/iobuf
+%{_libdir}/%{name}/misc
+%{_libdir}/%{name}/msg
+%{_libdir}/%{name}/net
+%{_libdir}/%{name}/path
+%{_libdir}/%{name}/pwcmp
+%{_libdir}/%{name}/str
+%{_libdir}/%{name}/unix
+%{_libdir}/%{name}/vmailmgr
+# linking "scripts"
+%{_libdir}/%{name}/crypt.lib
+%{_libdir}/%{name}/dl.lib
+%{_libdir}/%{name}/m.lib
+%{_libdir}/%{name}/net.lib
+%{_libdir}/%{name}/rt.lib
+%{_libdir}/%{name}/s.lib
+%{_libdir}/%{name}/shadow.lib
+%{_libdir}/%{name}/socket.lib
 %{_includedir}/%{name}
+%{_mandir}/man1/cli-generate.1*
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/%{name}/libbg.a
+%{_libdir}/%{name}/libbg-sysdeps.a
