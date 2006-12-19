@@ -19,7 +19,7 @@ Zestaw bibliotek Bruce'a Guentera.
 
 %package devel
 Summary:	bglibs header files
-Summary(pl):	Pliki nag≈Ç√≥wkowe bglibs
+Summary(pl):	Pliki nag≥Ûwkowe bglibs
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -27,7 +27,7 @@ Requires:	%{name} = %{version}-%{release}
 Header files for bglibs.
 
 %description devel -l pl
-Pliki nag≈Ç√≥wkowe dla bglibs.
+Pliki nag≥Ûwkowe dla bglibs.
 
 %prep
 %setup -q
