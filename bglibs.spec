@@ -1,5 +1,5 @@
 Summary:	Bruce Guenter's Libraries Collection
-Summary(pl):	Zestaw bibliotek Bruce'a Guentera
+Summary(pl.UTF-8):   Zestaw bibliotek Bruce'a Guentera
 Name:		bglibs
 Version:	1.102
 Release:	1
@@ -14,32 +14,32 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Bruce Guenter's Libraries Collection.
 
-%description -l pl
+%description -l pl.UTF-8
 Zestaw bibliotek Bruce'a Guentera.
 
 %package devel
 Summary:	bglibs header files
-Summary(pl):	Pliki nag≥Ûwkowe bglibs
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe bglibs
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for bglibs.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe dla bglibs.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe dla bglibs.
 
 %package static
 Summary:	Static version of bglibs
-Summary(pl):	Statyczne wersje bglibs
+Summary(pl.UTF-8):   Statyczne wersje bglibs
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of bglibs with shared equivalents.
 
-%description static -l pl
-Statyczne wersje bglibs maj±cych odpowiedniki wspÛ≥dzielone.
+%description static -l pl.UTF-8
+Statyczne wersje bglibs majƒÖcych odpowiedniki wsp√≥≈Çdzielone.
 
 %prep
 %setup -q
