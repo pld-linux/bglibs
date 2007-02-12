@@ -1,5 +1,5 @@
 Summary:	Bruce Guenter's Libraries Collection
-Summary(pl.UTF-8):   Zestaw bibliotek Bruce'a Guentera
+Summary(pl.UTF-8):	Zestaw bibliotek Bruce'a Guentera
 Name:		bglibs
 Version:	1.102
 Release:	1
@@ -19,7 +19,7 @@ Zestaw bibliotek Bruce'a Guentera.
 
 %package devel
 Summary:	bglibs header files
-Summary(pl.UTF-8):   Pliki nagłówkowe bglibs
+Summary(pl.UTF-8):	Pliki nagłówkowe bglibs
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -31,7 +31,7 @@ Pliki nagłówkowe dla bglibs.
 
 %package static
 Summary:	Static version of bglibs
-Summary(pl.UTF-8):   Statyczne wersje bglibs
+Summary(pl.UTF-8):	Statyczne wersje bglibs
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
