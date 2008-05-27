@@ -111,7 +111,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/%{name}/libinstaller.a
 %{_libdir}/%{name}/libinstcheck.a
 %{_libdir}/%{name}/libinstshow.a
-%{_libdir}/%{name}/libsysdeps.a
 # dirs with symlinks to libbg-*.a
 %{_libdir}/%{name}/base64
 %{_libdir}/%{name}/cdb
@@ -143,3 +142,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/%{name}/libbg.a
 %{_libdir}/%{name}/libbg-sysdeps.a
+# symlinks
+%{_libdir}/%{name}/libsysdeps.a
