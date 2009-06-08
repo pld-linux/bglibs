@@ -1,12 +1,12 @@
 Summary:	Bruce Guenter's Libraries Collection
 Summary(pl.UTF-8):	Zestaw bibliotek Bruce'a Guentera
 Name:		bglibs
-Version:	1.104
+Version:	1.106
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://untroubled.org/bglibs/%{name}-%{version}.tar.gz
-# Source0-md5:	ce4d7da1fe142fbbb6f42b619a9ff816
+# Source0-md5:	99bf5936456c7661c329beab63d2b520
 URL:		http://untroubled.org/bglibs/
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
